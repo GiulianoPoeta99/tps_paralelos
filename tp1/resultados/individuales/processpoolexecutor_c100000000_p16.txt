@@ -1,0 +1,6 @@
+Implementacion: concurrent.futures.ProcessPoolExecutor
+Complejidad c: 100000000
+Workers: 16
+Tiempo (segundos): 9.392427
+Suma final: 50000000.706162
+Equipo (cores disponibles): 8

@@ -1,0 +1,33 @@
+# Resultados benchmark — multiplicación de matrices (C = 512)
+
+Fuente: `resultados_v2_c512.csv` (ruta relativa al directorio `matrices/` según ubicación del CSV).
+
+Las columnas **speed_up_*** y **eficiencia_*** usan como baseline el tiempo del método **secuencial** (mismo C, perfil y max-val):
+- **_ab**: respecto al tiempo del producto **A·B**.
+- **_btat**: respecto al tiempo del producto **Bᵀ·Aᵀ**.
+
+Los **checksum** son la suma de todos los elementos de cada matriz resultado (deben coincidir Σ(A·B) y Σ(Bᵀ·Aᵀ)).
+
+## Tabla
+
+| Algoritmo | C | Perfil | max-val | Workers | t A·B (s) | t Bᵀ·Aᵀ (s) | Speed-up A·B | Eficiencia A·B | Speed-up Bᵀ·Aᵀ | Eficiencia Bᵀ·Aᵀ | Cores | Estado | Σ(A·B) | Σ(Bᵀ·Aᵀ) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| secuencial | 512 | cubo | 256 | 1 | 11.661813 | 10.612238 | 1.151190 | 1.151190 | 1.288540 | 1.288540 | 8 | ok | -110463704 | -110463704 |
+| secuencial (tradicional) | 512 | cubo | 256 | 1 | 13.424968 | 13.674293 | 1.000000 | 1.000000 | 1.000000 | 1.000000 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ThreadPoolExecutor | 512 | cubo | 256 | 1 | 11.529824 | 11.166525 | 1.164369 | 1.164369 | 1.224579 | 1.224579 | 8 | ok | -110463704 | -110463704 |
+| threading | 512 | cubo | 256 | 1 | 11.427808 | 11.099364 | 1.174763 | 1.174763 | 1.231989 | 1.231989 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ProcessPoolExecutor | 512 | cubo | 256 | 1 | 10.069089 | 10.022266 | 1.333285 | 1.333285 | 1.364391 | 1.364391 | 8 | ok | -110463704 | -110463704 |
+| numba (njit) | 512 | cubo | 256 | 1 | 1.162468 | 1.140488 | 11.548677 | 11.548677 | 11.989861 | 11.989861 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ThreadPoolExecutor | 512 | cubo | 256 | 4 | 3.630521 | 3.766059 | 3.697808 | 0.924452 | 3.630929 | 0.907732 | 8 | ok | -110463704 | -110463704 |
+| threading | 512 | cubo | 256 | 4 | 3.556919 | 3.750438 | 3.774325 | 0.943581 | 3.646052 | 0.911513 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ProcessPoolExecutor | 512 | cubo | 256 | 4 | 3.183593 | 2.974577 | 4.216923 | 1.054231 | 4.597055 | 1.149264 | 8 | ok | -110463704 | -110463704 |
+| numba (njit) | 512 | cubo | 256 | 4 | 1.105345 | 1.038629 | 12.145500 | 3.036375 | 13.165715 | 3.291429 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ThreadPoolExecutor | 512 | cubo | 256 | 8 | 3.374612 | 3.272962 | 3.978226 | 0.497278 | 4.177957 | 0.522245 | 8 | ok | -110463704 | -110463704 |
+| threading | 512 | cubo | 256 | 8 | 3.258203 | 3.258459 | 4.120360 | 0.515045 | 4.196552 | 0.524569 | 8 | ok | -110463704 | -110463704 |
+| concurrent.futures.ProcessPoolExecutor | 512 | cubo | 256 | 8 | 3.071066 | 2.945130 | 4.371436 | 0.546429 | 4.643018 | 0.580377 | 8 | ok | -110463704 | -110463704 |
+| numba (njit) | 512 | cubo | 256 | 8 | 1.036503 | 1.029272 | 12.952175 | 1.619022 | 13.285403 | 1.660675 | 8 | ok | -110463704 | -110463704 |
+
+## Notas
+
+- **Eficiencia** = speed-up / número de workers.
+- Si falta speed-up/eficiencia para Bᵀ·Aᵀ en un CSV viejo, volvé a ejecutar `benchmark.py` para regenerar columnas.

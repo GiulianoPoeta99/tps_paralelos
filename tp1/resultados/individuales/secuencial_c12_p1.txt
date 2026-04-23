@@ -1,0 +1,6 @@
+Implementacion: secuencial
+Complejidad c: 12
+Workers: 1
+Tiempo (segundos): 0.000009
+Suma final: 4.984695
+Equipo (cores disponibles): 8

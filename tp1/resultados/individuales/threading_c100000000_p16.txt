@@ -1,0 +1,6 @@
+Implementacion: threading
+Complejidad c: 100000000
+Workers: 16
+Tiempo (segundos): 8.964230
+Suma final: 50000000.706162
+Equipo (cores disponibles): 8

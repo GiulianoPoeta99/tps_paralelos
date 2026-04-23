@@ -1,0 +1,6 @@
+Implementacion: multiprocessing.Pool
+Complejidad c: 12
+Workers: 16
+Tiempo (segundos): 0.131812
+Suma final: 4.984695
+Equipo (cores disponibles): 8
