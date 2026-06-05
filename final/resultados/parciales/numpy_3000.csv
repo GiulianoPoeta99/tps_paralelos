@@ -1,0 +1,2 @@
+tamano,metodo,corridas,tiempo_rgb_gris_s,tiempo_sobel_s,tiempo_total_s,porcentaje_blancos,speed_up,performance_pct,workers,cpu_logicos
+3000,numpy,5,0.738434547,0.806570722,1.545005269,0.001366667,1.000000,100.00,1,8

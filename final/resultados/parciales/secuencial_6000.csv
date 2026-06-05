@@ -1,0 +1,2 @@
+tamano,metodo,corridas,tiempo_rgb_gris_s,tiempo_sobel_s,tiempo_total_s,porcentaje_blancos,speed_up,performance_pct,workers,cpu_logicos
+6000,secuencial,5,9.001387958,24.281427828,33.282815786,0.000000000,1.000000,100.00,1,8

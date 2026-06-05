@@ -1,0 +1,2 @@
+tamano,metodo,corridas,tiempo_rgb_gris_s,tiempo_sobel_s,tiempo_total_s,porcentaje_blancos,workers,cpu_logicos,gpu,torch_version,torch_cuda,transfer_h2d_s,transfer_d2h_s,kernel_rgb_gris_s,kernel_sobel_s
+1500,pytorch_cpu,5,0.021680436,0.037033428,0.058713864,0.059955556,4,8,CPU,2.12.0+cu130,13.0,0.000000000,0.000000000,0.021680436,0.037033428

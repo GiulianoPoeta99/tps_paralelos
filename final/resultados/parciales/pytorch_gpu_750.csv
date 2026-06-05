@@ -1,0 +1,2 @@
+tamano,metodo,corridas,tiempo_rgb_gris_s,tiempo_sobel_s,tiempo_total_s,porcentaje_blancos,workers,cpu_logicos,gpu,torch_version,torch_cuda,transfer_h2d_s,transfer_d2h_s,kernel_rgb_gris_s,kernel_sobel_s
+750,pytorch_gpu,5,0.010117973,0.006472537,0.016590509,0.281777778,14,8,NVIDIA GeForce GTX 1650,2.12.0+cu130,13.0,0.000849445,0.000346288,0.009268528,0.006126249

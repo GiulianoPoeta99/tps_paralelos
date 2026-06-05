@@ -1,0 +1,2 @@
+tamano,metodo,corridas,tiempo_rgb_gris_s,tiempo_sobel_s,tiempo_total_s,porcentaje_blancos,workers,cpu_logicos,gpu,transfer_h2d_s,transfer_d2h_s,kernel_rgb_gris_s,kernel_sobel_s
+750,numba_gpu,5,0.001167969,0.000624656,0.001792625,0.281777778,14,8,NVIDIA GeForce GTX 1650,0.000662192,0.000174041,0.000505777,0.000450615
