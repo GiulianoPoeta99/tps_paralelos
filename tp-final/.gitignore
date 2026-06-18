@@ -1,0 +1,6 @@
+video_facultad.*
+.venv/
+resultados/
+entrada/
+codigo/__pycache__/
+*.pyc
