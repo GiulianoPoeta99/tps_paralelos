@@ -231,12 +231,17 @@ El audio se reincorporó con `ffmpeg` usando la pista del clip de entrada `entra
 
 El video final con audio de PyTorch GPU mantiene duración `30.01 s`, resolución `3840x2160`, `59.94 FPS` y audio AAC estéreo a `48000 Hz`.
 
-### 3.8 Figuras sugeridas para Obsidian
+### 3.8 Evidencia visual
 
-<!-- PEGAR ACÁ captura de un frame original del clip de entrada -->
-<!-- PEGAR ACÁ captura del frame con filtro sepia secuencial -->
-<!-- PEGAR ACÁ captura del frame con filtro sepia PyTorch CPU -->
-<!-- PEGAR ACÁ captura del frame con filtro sepia PyTorch GPU -->
+La evidencia visual del filtro no se incluye como imágenes estáticas dentro del informe, porque la entrega contiene los videos procesados. Las salidas con audio quedan en:
+
+```text
+resultados/videos/sepia_secuencial_con_audio.mp4
+resultados/videos/sepia_pytorch_cpu_con_audio.mp4
+resultados/videos/sepia_pytorch_gpu_con_audio.mp4
+```
+
+Esos archivos permiten verificar directamente el efecto sepia sobre el video completo y no solo sobre un frame aislado.
 
 ---
 
@@ -301,34 +306,3 @@ La versión secuencial es adecuada como línea base conceptual, pero no como est
 PyTorch GPU fue la estrategia más rápida. Logró un speed-up de `33.556x` respecto del secuencial y casi duplicó el rendimiento de PyTorch CPU en pipeline completo. Aun así, las transferencias CPU-GPU y la escritura del video limitan la mejora observada. El cómputo GPU puro es rápido, pero el pipeline completo todavía queda lejos de tiempo real.
 
 Para este caso, la estrategia más adecuada es PyTorch GPU si el driver CUDA está operativo. Si la GPU no está disponible, PyTorch CPU es la mejor alternativa y mantiene una mejora muy grande frente al secuencial.
-
----
-
-## 6. Código utilizado
-
-Archivos principales:
-
-```text
-tp-final/codigo/sepia_filter.py
-tp-final/codigo/secuencial.py
-tp-final/codigo/pytorch_cpu.py
-tp-final/codigo/pytorch_gpu.py
-tp-final/codigo/procesamiento_video.py
-tp-final/codigo/resultados_video.py
-tp-final/codigo/main.py
-```
-
-Archivo de instrucciones:
-
-```text
-tp-final/instrucciones.md
-```
-
-Resultados base:
-
-```text
-tp-final/resultados/resultados_video4k_sepia.csv
-tp-final/resultados/resultados_video4k_sepia.md
-tp-final/resultados/parciales/
-tp-final/resultados/videos/
-```
